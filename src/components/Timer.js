@@ -69,7 +69,7 @@ export default function Timer({}) {
   return (
     <div style={{ textAlign: 'center' }}>
       <h2 id="timer-label">{timerLabel}</h2>
-      <div style={{ fontSize: '100px' }} id="time-left">
+      <div id="time-left">
         <span>{minutes <= 9 && 0}</span>
         <span>{minutes}</span>:<span>{seconds <= 9 && 0}</span>
         <span>{seconds}</span>

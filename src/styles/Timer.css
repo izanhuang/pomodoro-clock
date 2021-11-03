@@ -1,3 +1,13 @@
+#time-left {
+  font-size: 100px;
+  background-color: #677b7c;
+  width: 325px;
+  margin-left: 88px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 5px solid #e4cad4;
+}
+
 button {
   background-color: #f0d5de;
   border-radius: 20px;
@@ -6,8 +16,9 @@ button {
   text-align: center;
   cursor: pointer;
   color: black;
-  border: none;
-  box-shadow: 0 5px #999;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  box-shadow: 0 3px #999;
 }
 
 button:hover {
@@ -17,13 +28,18 @@ button:hover {
 button:active {
   background-color: #bca8b0;
   box-shadow: 0 1px #666;
-  transform: translateY(4px);
+  transform: translateY(3px);
 }
 
 #start_stop,
 #reset {
-  width: 115px;
+  width: 125px;
   height: 35px;
+  margin-bottom: 10px;
+}
+
+#start_stop {
+  margin-right: 75px;
 }
 
 .buttonsWrapper {

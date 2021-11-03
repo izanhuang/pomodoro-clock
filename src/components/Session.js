@@ -36,10 +36,11 @@ export const Session = ({}) => {
 
   return (
     <div>
-      <h2 id="session-length">{sessionLength}</h2>
-      <p id="session-label">Session Length</p>
+      {/* <h2 id="session-length">{sessionLength}</h2> */}
+      <p id="session-label">Session Length: {sessionLength}</p>
       <button
         id="session-decrement"
+        className="decrement"
         disabled={sessionLength <= 1 ? true : decrementDisabled}
         onClick={handleDecrement}
       >
@@ -47,6 +48,7 @@ export const Session = ({}) => {
       </button>
       <button
         id="session-increment"
+        className="increment"
         disabled={sessionLength >= 60 ? true : incrementDisabled}
         onClick={handleIncrement}
       >

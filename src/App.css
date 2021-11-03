@@ -4,13 +4,23 @@
   justify-content: center;
   align-items: center;
   font-family: monospace;
+  padding-top: 3%;
+  /* width: 100vw; */
+  /* height: 100vh; */
+}
+
+h1 {
+  font-size: 30px;
 }
 
 .clock {
   width: 500px;
-  height: 400px;
-  background-color: #f0d5de;
+  height: 385px;
+  background-color: #f1d6df;
   border-radius: 100px;
+  box-shadow: 4px 4px 1px #edd1dd;
+  margin-bottom: 350px;
+  margin-top: 2%;
 }
 
 .break-session {
@@ -20,7 +30,21 @@
   align-items: center;
 }
 
+#session-label {
+  width: 129px;
+}
+
 .buttonsWrapper {
   width: 115px;
   height: 35px;
+}
+
+.decrement,
+.increment {
+  width: 57.5px;
+  height: 35px;
+}
+
+.decrement {
+  margin-right: 10px;
 }

@@ -38,10 +38,11 @@ export const Break = ({}) => {
 
   return (
     <div>
-      <h2 id="break-length">{breakLength}</h2>
-      <p id="break-label">Break Length</p>
+      {/* <h2 id="break-length">{breakLength}</h2> */}
+      <p id="break-label">Break Length: {breakLength}</p>
       <button
         id="break-decrement"
+        className="decrement"
         disabled={breakLength <= 1 ? true : decrementDisabled}
         onClick={handleDecrement}
       >
@@ -49,6 +50,7 @@ export const Break = ({}) => {
       </button>
       <button
         id="break-increment"
+        className="increment"
         disabled={breakLength >= 60 ? true : incrementDisabled}
         onClick={handleIncrement}
       >
