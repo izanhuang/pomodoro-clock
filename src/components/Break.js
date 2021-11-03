@@ -1,31 +1,40 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import PomodoroContext from '../context/pomodoro-context'
 
-export const Break = () => {
-  const { breakLength, setBreakLength } = useContext(PomodoroContext)
-  const [decrementDisabled, setDrecementDisabled] = useState(false)
+export const Break = ({}) => {
+  const { breakLength, setBreakLength, isRunning } = useContext(PomodoroContext)
+  const [decrementDisabled, setDrecementDisabled] = useState(breakLength === 1)
   const [incrementDisabled, setIncrementDisabled] = useState(false)
 
   const handleDecrement = () => {
-    if (breakLength - 1 === 1) {
-      setBreakLength(breakLength - 1)
-      setDrecementDisabled(true)
-    } else {
-      setBreakLength(breakLength - 1)
+    if (!isRunning) {
+      if (breakLength - 1 === 1) {
+        setBreakLength(breakLength - 1)
+        setDrecementDisabled(true)
+      } else {
+        setBreakLength(breakLength - 1)
+        setDrecementDisabled(false)
+      }
     }
   }
 
   const handleIncrement = () => {
-    if (breakLength + 1 === 2) {
-      setBreakLength(breakLength + 1)
-      setDrecementDisabled(false)
-    } else if (breakLength + 1 === 60) {
-      setBreakLength(breakLength + 1)
-      setIncrementDisabled(true)
-    } else {
-      setBreakLength(breakLength + 1)
+    if (!isRunning) {
+      if (breakLength + 1 >= 2) {
+        setBreakLength(breakLength + 1)
+        setDrecementDisabled(false)
+      } else if (breakLength + 1 === 60) {
+        setBreakLength(breakLength + 1)
+        setIncrementDisabled(true)
+      } else {
+        setBreakLength(breakLength + 1)
+      }
     }
   }
+
+  useEffect(() => {
+    setDrecementDisabled(false)
+  }, [breakLength === 5])
 
   return (
     <div>
@@ -33,14 +42,14 @@ export const Break = () => {
       <p id="break-label">Break Length</p>
       <button
         id="break-decrement"
-        disabled={decrementDisabled}
+        disabled={breakLength <= 1 ? true : decrementDisabled}
         onClick={handleDecrement}
       >
         -
       </button>
       <button
         id="break-increment"
-        disabled={incrementDisabled}
+        disabled={breakLength >= 60 ? true : incrementDisabled}
         onClick={handleIncrement}
       >
         +

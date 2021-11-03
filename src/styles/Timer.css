@@ -1,0 +1,32 @@
+button {
+  background-color: #f0d5de;
+  border-radius: 20px;
+  border-color: #75898b;
+  /* padding: 10px 20px; */
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  border: none;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {
+  background-color: #bca8b0;
+}
+
+button:active {
+  background-color: #bca8b0;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+#start_stop,
+#reset {
+  width: 115px;
+  height: 35px;
+}
+
+.buttonsWrapper {
+  width: 115px;
+  height: 35px;
+}

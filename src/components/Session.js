@@ -1,29 +1,36 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import PomodoroContext from '../context/pomodoro-context'
+import '../App.css'
 
-export const Session = (props) => {
-  const { sessionLength, setSessionLength } = useContext(PomodoroContext)
+export const Session = ({}) => {
+  const { sessionLength, setSessionLength, isRunning } = useContext(
+    PomodoroContext,
+  )
   const [decrementDisabled, setDrecementDisabled] = useState(false)
   const [incrementDisabled, setIncrementDisabled] = useState(false)
 
   const handleDecrement = () => {
-    if (sessionLength - 1 === 1) {
-      setSessionLength(sessionLength - 1)
-      setDrecementDisabled(true)
-    } else {
-      setSessionLength(sessionLength - 1)
+    if (!isRunning) {
+      if (sessionLength - 1 < 1) {
+        setSessionLength(sessionLength - 1)
+        setDrecementDisabled(true)
+      } else {
+        setSessionLength(sessionLength - 1)
+      }
     }
   }
 
   const handleIncrement = () => {
-    if (sessionLength + 1 === 2) {
-      setSessionLength(sessionLength + 1)
-      setDrecementDisabled(false)
-    } else if (sessionLength + 1 === 60) {
-      setSessionLength(sessionLength + 1)
-      setIncrementDisabled(true)
-    } else {
-      setSessionLength(sessionLength + 1)
+    if (!isRunning) {
+      if (sessionLength + 1 === 2) {
+        setSessionLength(sessionLength + 1)
+        setDrecementDisabled(false)
+      } else if (sessionLength + 1 === 60) {
+        setSessionLength(sessionLength + 1)
+        setIncrementDisabled(true)
+      } else {
+        setSessionLength(sessionLength + 1)
+      }
     }
   }
 
@@ -33,14 +40,14 @@ export const Session = (props) => {
       <p id="session-label">Session Length</p>
       <button
         id="session-decrement"
-        disabled={decrementDisabled}
+        disabled={sessionLength <= 1 ? true : decrementDisabled}
         onClick={handleDecrement}
       >
         -
       </button>
       <button
         id="session-increment"
-        disabled={incrementDisabled}
+        disabled={sessionLength >= 60 ? true : incrementDisabled}
         onClick={handleIncrement}
       >
         +
