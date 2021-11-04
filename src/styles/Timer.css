@@ -19,14 +19,15 @@ button {
   border: 1px solid #999;
   box-sizing: border-box;
   box-shadow: 0 3px #999;
+  font-family: monospace;
 }
 
 button:hover {
-  background-color: #bca8b0;
+  background-color: #e2c3d0;
 }
 
 button:active {
-  background-color: #bca8b0;
+  background-color: #e2c3d0;
   box-shadow: 0 1px #666;
   transform: translateY(3px);
 }

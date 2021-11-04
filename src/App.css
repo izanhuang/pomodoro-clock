@@ -19,7 +19,7 @@ h1 {
   background-color: #f1d6df;
   border-radius: 100px;
   box-shadow: 4px 4px 1px #edd1dd;
-  margin-bottom: 350px;
+  margin-bottom: 30px;
   margin-top: 2%;
 }
 
@@ -47,4 +47,8 @@ h1 {
 
 .decrement {
   margin-right: 10px;
+}
+
+footer {
+  color: #75898b;
 }

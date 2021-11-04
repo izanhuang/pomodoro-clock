@@ -30,6 +30,8 @@ function App() {
             <Session />
           </div>
         </div>
+
+        <footer>Created by Izan Huang</footer>
       </PomodoroContext.Provider>
     </div>
   )
