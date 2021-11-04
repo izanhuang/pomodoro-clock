@@ -20,8 +20,10 @@ export default function Timer({}) {
   useEffect(() => {
     if (timerLabel === 'Session') {
       setMinutes(sessionLength)
+      setSeconds(0)
     } else {
       setMinutes(breakLength)
+      setSeconds(0)
     }
   }, [sessionLength, breakLength])
 
@@ -74,7 +76,6 @@ export default function Timer({}) {
         <span>{minutes}</span>:<span>{seconds <= 9 && 0}</span>
         <span>{seconds}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
       <button id="start_stop" onClick={handleStartStop}>
         Start/Pause
       </button>

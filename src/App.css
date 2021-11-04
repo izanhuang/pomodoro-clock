@@ -15,12 +15,12 @@ h1 {
 
 .clock {
   width: 500px;
-  height: 385px;
+  height: 365px;
   background-color: #f1d6df;
   border-radius: 100px;
   box-shadow: 4px 4px 1px #edd1dd;
   margin-bottom: 30px;
-  margin-top: 2%;
+  margin-top: 1.5%;
 }
 
 .break-session {
