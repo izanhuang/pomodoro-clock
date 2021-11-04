@@ -32,10 +32,6 @@ export const Break = ({}) => {
     }
   }
 
-  useEffect(() => {
-    setDrecementDisabled(false)
-  }, [breakLength === 5])
-
   return (
     <div>
       <p id="break-label">Break Length: {breakLength}</p>
