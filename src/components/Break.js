@@ -38,7 +38,6 @@ export const Break = ({}) => {
 
   return (
     <div>
-      {/* <h2 id="break-length">{breakLength}</h2> */}
       <p id="break-label">Break Length: {breakLength}</p>
       <button
         id="break-decrement"

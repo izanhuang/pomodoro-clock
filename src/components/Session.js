@@ -36,7 +36,6 @@ export const Session = ({}) => {
 
   return (
     <div>
-      {/* <h2 id="session-length">{sessionLength}</h2> */}
       <p id="session-label">Session Length: {sessionLength}</p>
       <button
         id="session-decrement"
