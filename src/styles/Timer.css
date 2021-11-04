@@ -40,10 +40,5 @@ button:active {
 }
 
 #start_stop {
-  margin-right: 75px;
-}
-
-.buttonsWrapper {
-  width: 115px;
-  height: 35px;
+  margin-right: 50px;
 }
