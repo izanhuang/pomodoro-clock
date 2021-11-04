@@ -16,6 +16,7 @@ export const Session = ({}) => {
         setDrecementDisabled(true)
       } else {
         setSessionLength(sessionLength - 1)
+        setIncrementDisabled(false)
       }
     }
   }
@@ -28,14 +29,19 @@ export const Session = ({}) => {
       } else if (sessionLength + 1 === 60) {
         setSessionLength(sessionLength + 1)
         setIncrementDisabled(true)
-      } else {
+      }
+      if (sessionLength + 1 !== 60) {
         setSessionLength(sessionLength + 1)
+        setIncrementDisabled(false)
       }
     }
   }
 
   return (
     <div>
+      <h2 style={{ display: 'none' }} id="session-length">
+        {sessionLength}
+      </h2>
       <p id="session-label">Session Length: {sessionLength}</p>
       <button
         id="session-decrement"
@@ -48,7 +54,7 @@ export const Session = ({}) => {
       <button
         id="session-increment"
         className="increment"
-        disabled={sessionLength >= 60 ? true : incrementDisabled}
+        disabled={incrementDisabled}
         onClick={handleIncrement}
       >
         +

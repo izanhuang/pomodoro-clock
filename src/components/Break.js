@@ -8,12 +8,12 @@ export const Break = ({}) => {
 
   const handleDecrement = () => {
     if (!isRunning) {
-      if (breakLength - 1 === 1) {
+      if (breakLength - 1 < 1) {
         setBreakLength(breakLength - 1)
         setDrecementDisabled(true)
       } else {
         setBreakLength(breakLength - 1)
-        setDrecementDisabled(false)
+        setIncrementDisabled(false)
       }
     }
   }
@@ -34,6 +34,9 @@ export const Break = ({}) => {
 
   return (
     <div>
+      <h2 style={{ display: 'none' }} id="break-length">
+        {breakLength}
+      </h2>
       <p id="break-label">Break Length: {breakLength}</p>
       <button
         id="break-decrement"
